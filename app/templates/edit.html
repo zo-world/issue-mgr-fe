@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+
+{% block title %}Edit Task{% endblock title %}
+
+
+{% block content %}
+<form method="POST" action="{{ url_for('update_task', pk=task['id']) }}">
+  <p>
+    <label for="summary">Summary</label>
+    <input 
+    type="text" name="summary" id="id_summary"
+    value="{{ task['summary'] }}" maxlength="128" required>
+  </p>
+  <p>
+    <label for="description">Description</label>
+    <textarea 
+    name="description" id="id_description" 
+    rows="5" required>{{ task['description'] }}</textarea>
+  </p>
+  <!-- <p>
+    <label for="is_active">Active</label>
+    <input type="checkbox" name="is_active" id="id_is_active" value="">
+  </p> -->
+  <input type="hidden" name="is_active" id="id_is_active" value="{{ task['is_active'] }}">
+  <input type="submit" class="btn btn-success" value="Edit">
+</form>
+{% endblock content %}

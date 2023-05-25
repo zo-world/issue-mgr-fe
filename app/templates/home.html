@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block title %}Home{% endblock title %}
+
+{% block content %}
+<h1>Hello, world!</h1>
+<!--  -->
+<p>The current date and time: {{ ts }}</p>
+{% if numbers %}
+  {% for number in numbers %}
+    <h{{ number }}>Hello</h{{ number }}>
+  {% endfor %}
+{% endif %}
+{% endblock content %}

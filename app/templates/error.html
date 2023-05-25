@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+
+{% block title %}Error {{ err}}{% endblock title %}
+
+
+
+{% block content %}
+<h1>Error {{ err }}</h1>
+<p>The operation you requested failed with error code: {{ err }}</p>
+<p>Please try again later.</p>
+<p><a href="{{ url_for('home') }}">Click here</a> to go to the home page.</p>
+{% endblock content %}
